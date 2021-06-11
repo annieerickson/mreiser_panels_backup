@@ -15,7 +15,9 @@ else
     defaultDrive = {'E'};
 end
        
-SD_drive = userInputSDDrive(defaultDrive);
+%SD_drive = userInputSDDrive(defaultDrive);
+%SD_drive = {'E'};
+SD_drive = 'E';
 
 
 myPCCfg.SDDrive = SD_drive;
