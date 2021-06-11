@@ -163,11 +163,14 @@ display_curr_frame(handles)
 
 % --------------------------------------------------------------------
 function menu_load_pattern_Callback(hObject, eventdata, handles)
-load('Pcontrol_paths.mat');
-cd(pattern_path)
+% load('Pcontrol_paths.mat');
+% cd(pattern_path)
 [FileName,PathName] = uigetfile('P*.mat','Select a Pattern File');
 if (all(FileName ~= 0))
-    load([PathName FileName]);
+    %load([PathName FileName]);
+%     pattern = load([PathName FileName]);
+    pattern_file = load(FileName);
+    pattern = pattern_file.pattern;
     handles.pattern = pattern;
 
     handles.pattern_x_size = pattern.x_num;
